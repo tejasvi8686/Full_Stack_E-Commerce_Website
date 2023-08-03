@@ -2,7 +2,6 @@ import "./Home.scss";
 
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
-import Product from "../Products/Product/Product";
 import Products from "../Products/Products";
 const Home = () => {
   return (
@@ -11,7 +10,7 @@ const Home = () => {
       <div className="main-content">
         <div className="layout">
           <Category />
-          <Products/>
+          <Products  headingText="popular Products"/>
         </div>
       </div>
     </div>
