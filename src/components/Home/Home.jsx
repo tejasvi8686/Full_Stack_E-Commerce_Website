@@ -1,16 +1,25 @@
-import "./Home.scss";
-
+import React, { useEffect } from "react";
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
 import Products from "../Products/Products";
+import { fetchDataFromApi } from "../../utils/api";
+
 const Home = () => {
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  const getCategories = () => {
+    fetchDataFromApi("/api/categories?populate=*").then(res => console.log(res));
+  };
+
   return (
-    <div >
+    <div>
       <Banner />
       <div className="main-content">
         <div className="layout">
           <Category />
-          <Products  headingText="popular Products"/>
+          <Products headingText="popular Products" />
         </div>
       </div>
     </div>
