@@ -6,6 +6,7 @@ import Products from "../Products/Products";
 import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
 
+// This project is made by Tejasvi raj
 const Home = () => {
     const { products, setProducts, categories, setCategories } =
         useContext(Context);
