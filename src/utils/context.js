@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 const AppContext = ({ children }) => {
-  const [categories, setCategories, products, setProduct ] = useState("");
+  const [categories, setCategories] = useState("");
   const [product, setProducts] = useState("");
   return (
     <Context.Provider

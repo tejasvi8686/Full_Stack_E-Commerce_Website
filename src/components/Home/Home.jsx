@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useCallback } from "react";
 import "./Home.scss";
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
@@ -8,38 +8,37 @@ import { Context } from "../../utils/context";
 
 // This project is made by Tejasvi raj
 const Home = () => {
-    const { products, setProducts, categories, setCategories } =
-        useContext(Context);
-    useEffect(() => {
-        getProducts();
-        getCategories();
-    }, []);
+  const { products, setProducts, categories, setCategories } =
+    useContext(Context);
 
-    const getProducts = () => {
-        fetchDataFromApi("/api/products?populate=*").then((res) => {
-            setProducts(res);
-        });
-    };
-    const getCategories = () => {
-        fetchDataFromApi("/api/categories?populate=*").then((res) => {
-            setCategories(res);
-        });
-    };
+  const getProducts = useCallback(() => {
+    fetchDataFromApi("/api/products?populate=*").then((res) => {
+      setProducts(res);
+    });
+  }, [setProducts]);
 
-    return (
-        <div>
-            <Banner />
-            <div className="main-content">
-                <div className="layout">
-                    <Category categories={categories} />
-                    <Products
-                        headingText="Popular Products"
-                        products={products}
-                    />
-                </div>
-            </div>
+  const getCategories = useCallback(() => {
+    fetchDataFromApi("/api/categories?populate=*").then((res) => {
+      setCategories(res);
+    });
+  }, [setCategories]);
+
+  useEffect(() => {
+    getProducts();
+    getCategories();
+  }, [getProducts, getCategories]);
+
+  return (
+    <div>
+      <Banner />
+      <div className="main-content">
+        <div className="layout">
+          <Category categories={categories} />
+          <Products headingText="Popular Products" products={products} />
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Home;
