@@ -14,12 +14,14 @@ const Home = () => {
   const getProducts = useCallback(() => {
     fetchDataFromApi("/api/products?populate=*").then((res) => {
       setProducts(res);
+      console.log(res)
     });
   }, [setProducts]);
 
   const getCategories = useCallback(() => {
     fetchDataFromApi("/api/categories?populate=*").then((res) => {
       setCategories(res);
+      console.log(res)
     });
   }, [setCategories]);
 
@@ -28,13 +30,21 @@ const Home = () => {
     getCategories();
   }, [getProducts, getCategories]);
 
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
+
+  // const getProducts = () => {
+  //   fetchDataFromApi("/api/products?populate=*").then(res => console.log(res))
+  // };
+
   return (
     <div>
       <Banner />
       <div className="main-content">
         <div className="layout">
           <Category categories={categories} />
-          <Products headingText="Popular Products" products={products} />
+          <Products headingText="Popular Products"  products={products} />
         </div>
       </div>
     </div>
