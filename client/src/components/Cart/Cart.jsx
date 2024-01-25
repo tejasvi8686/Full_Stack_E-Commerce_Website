@@ -1,6 +1,6 @@
 import "./Cart.scss";
 import { MdClose } from "react-icons/md";
-//import { BsCartX } from "react-icons/bs";
+// import { BsCartX } from "react-icons/bs";
 
 import CartItem from "./CartItem/CartItem";
 
@@ -17,11 +17,11 @@ const Cart = ({ setShowCart }) => {
           </span>
         </div>
 
-        {/*<div className="empty-cart">
+        {/* <div className="empty-cart">
             <BsCartX/>
             <span>No Products in the cart.</span>
             <button className="return-cta">RETURN TO SHOP</button>
-  </div>*/}
+  </div> */}
 
         <>
           <CartItem />

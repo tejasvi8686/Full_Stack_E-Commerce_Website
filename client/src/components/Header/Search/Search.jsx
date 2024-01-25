@@ -3,13 +3,16 @@ import { MdClose } from "react-icons/md";
 
 import prod from "../../../assets/products/earbuds-prod-1.webp";
 
-const Search = ({ setShowSearch }) => {
+const Search = ({ setSearchModal }) => {
   return (
     <div className="search-modal">
       <div className="form-field">
         <input type="text" autoFocus placeholder="Search for Products" />
 
-        <MdClose onClick={() => setShowSearch(false)} />
+        <MdClose
+          
+          onClick={() => setSearchModal(false)}
+        />
       </div>
       <div className="search-result-content">
         <div className="search-results">
