@@ -14,6 +14,7 @@
     "@strapi/plugin-users-permissions": "4.12.1",
     "@strapi/strapi": "4.12.1",
     "better-sqlite3": "8.5.0",
+    "caniuse-lite": "^1.0.30001585",
     "stripe": "^14.15.0"
   },
   "author": {
