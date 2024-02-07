@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import Products from "../Products/Products";

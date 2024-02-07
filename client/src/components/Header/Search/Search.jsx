@@ -1,7 +1,6 @@
 import "./Search.scss";
 import { MdClose } from "react-icons/md";
 import React, { useState } from "react";
-import prod from "../../../assets/products/earbuds-prod-1.webp";
 import useFetch from "../../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
