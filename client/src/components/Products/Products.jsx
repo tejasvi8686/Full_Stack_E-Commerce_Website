@@ -7,6 +7,9 @@ import Product from "./Product/Product";
 const Products = ({ products, innerPage, headingText }) => {
   return (
     <div className="products-container">
+      {
+        console.log(products)
+      }
       {!innerPage && <div className="sec-heading"> {headingText} </div>}
       <div className="products">
         {products?.data?.map((item) => (

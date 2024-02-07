@@ -8,7 +8,7 @@ import { Context } from "../../utils/context";
 
 // This project is made by Tejasvi raj
 const Home = () => {
-  const { products, setProducts, categories, setCategories } =
+  const { product, setProducts, categories, setCategories } =
     useContext(Context);
 
   const getProducts = useCallback(() => {
@@ -44,7 +44,7 @@ const Home = () => {
       <div className="main-content">
         <div className="layout">
           <Category categories={categories} />
-          <Products  products={products} headingText="Popular Products"  />
+          <Products  products={product} headingText="Popular Products"  />
         </div>
       </div>
     </div>
